@@ -1,40 +1,50 @@
+* {
+ font-family: Arial, Verdana, sans-serif;
+ text-align: center;
+}
 body {
-  font-family: arial;
   /*color scheme #F7F7FF-Ghost White #279AF1-Carolina Blue #23B5D3-Pacific Blue
     #070600-Rich Black #EA526F-Paradise Pink*/
-  background-color: White;
+  background-color: #F7F7FF;
+  border: 2px solid blue;
+  padding-left: 100px;
+  padding-right: 100px;
   margin-top: 0px;
-  margin-bottom: 0px;
+}
+.navbar, li{
+  background-color: #3D4849;
+  border: 2px solid blue;
+  padding: 20px;
+
+}
+li {
+  display: inline;
+}
+a:link, a:visited{
+  color: white;
+  text-decoration: none;
 }
 
-.navbar {
-  background-color: #2B3A67;
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-}
 .header {
-  text-align: center;
-  background-color: #F7F7FF;
-  margin-left: 200px;
-  margin-right: 200px;
+  height: 160px;
+  border: 2px solid blue;
+  padding: 20px;
+
 }
+
+h1 {
+  border: 2px solid blue;
+  padding: 40px;
+}
+
 .content{
-  text-align: left;
-  background-color: #F7F7FF;
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-top: 0px;
-  padding-bottom: 100px;
-}
+  border: 2px solid blue;
 
-.header {
 }
-
+.slideshow{
+  height: 500px;
+  border: 2px solid blue;
+}
 #aboutme {
+  border: 2px solid blue;
 }
