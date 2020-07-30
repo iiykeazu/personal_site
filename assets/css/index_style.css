@@ -4,21 +4,22 @@
 }
 body {
   /*color scheme #F7F7FF-Ghost White #279AF1-Carolina Blue #23B5D3-Pacific Blue
-    #070600-Rich Black #EA526F-Paradise Pink*/
+    #070600-Rich Black #EA526F-Paradise Pink #3D4849-Grey*/
   background-color: #F7F7FF;
-  border: 2px solid blue;
   padding-left: 100px;
   padding-right: 100px;
   margin-top: 0px;
 }
 .navbar, li{
   background-color: #3D4849;
-  border: 2px solid blue;
   padding: 20px;
-
 }
-li {
+li{
   display: inline;
+  border-radius: 25px;
+}
+li:hover{
+  background-color: #279AF1
 }
 a:link, a:visited{
   color: white;
@@ -26,25 +27,23 @@ a:link, a:visited{
 }
 
 .header {
+  background-color: #FFFFFF;
   height: 160px;
-  border: 2px solid blue;
   padding: 20px;
-
+  border-bottom: 2px outset #279AF1;
 }
 
 h1 {
-  border: 2px solid blue;
   padding: 40px;
 }
 
 .content{
-  border: 2px solid blue;
-
+  background-color: #FFFFFF;
 }
 .slideshow{
   height: 500px;
-  border: 2px solid blue;
+  border-bottom: 2px outset #279AF1;
 }
 #aboutme {
-  border: 2px solid blue;
+  text-align: left;
 }
