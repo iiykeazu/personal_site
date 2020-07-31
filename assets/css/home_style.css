@@ -1,0 +1,22 @@
+.header {
+  background-color: #FFFFFF;
+  height: 160px;
+  padding: 20px;
+  border-bottom: 2px outset #279AF1;
+}
+h1 {
+  padding: 40px;
+}
+.content{
+  background-color: #FFFFFF;
+  padding-bottom: 10px;
+}
+.slideshow{
+  height: 500px;
+  border-bottom: 2px outset #279AF1;
+}
+#aboutme {
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
