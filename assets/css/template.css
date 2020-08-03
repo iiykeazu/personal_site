@@ -29,7 +29,7 @@ body {
   text-decoration: none;
 }
 #nav:hover{
-  color: #74B3CE;
+  color: #09BC8A;
 }
 .page{
   position: relative;
@@ -38,6 +38,7 @@ body {
   width: 1200px;
 }
 .header {
+  margin: auto;
   background-color: #508991;
   height: 160px;
   padding: 20px;
