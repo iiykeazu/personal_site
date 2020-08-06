@@ -1,49 +1,94 @@
-* {
- font-family: Arial, Verdana, sans-serif;
- text-align: center;
+
+  * {
+    font-family: Arial, Verdana, sans-serif;
+    text-align: center;
+  }
+@media screen and (min-width: 960px) {
+  body {
+    /*color scheme #F7F7FF-Ghost White #279AF1-Carolina Blue #23B5D3-Pacific Blue
+      #070600-Rich Black #EA526F-Paradise Pink #3D4849-Grey*/
+      background-color: #172A3A;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      width: 100%
+    }
+  .navbar{
+    margin: auto;
+    background-color: #004346;
+    padding: 20px 0 20px 0;
+    width: 85%;
+    min-width: 960px;
+    max-width: 1200px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  #nav {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  #nav:link, #nav:visited{
+    color: white;
+    text-decoration: none;
+  }
+  #nav:hover{
+    color: #09BC8A;
+  }
+  .page{
+    position: relative;
+    margin: auto;
+    width: 85%;
+    min-width: 960px;
+    max-width: 1200px;
+  }
+  .header {
+    margin: auto;
+    background-color: #508991;
+    height: 160px;
+    padding: 20px;
+  }
+  h1 {
+    padding: 40px;
+    color: white;
+  }
 }
-body {
-  /*color scheme #F7F7FF-Ghost White #279AF1-Carolina Blue #23B5D3-Pacific Blue
-    #070600-Rich Black #EA526F-Paradise Pink #3D4849-Grey*/
-  background-color: #172A3A;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-.navbar{
-  position: fixed;
-  top: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #004346;
-  padding: 20px;
-  width: 1160px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
-  z-index: 10;
-}
-#nav {
-  padding: 20px;
-  border-radius: 10px;
-}
-#nav:link, #nav:visited{
-  color: white;
-  text-decoration: none;
-}
-#nav:hover{
-  color: #09BC8A;
-}
-.page{
-  position: relative;
-  top: 50px;
-  margin: auto;
-  width: 1200px;
-}
-.header {
-  margin: auto;
-  background-color: #508991;
-  height: 160px;
-  padding: 20px;
-}
-h1 {
-  padding: 40px;
-  color: white;
+@media screen and (min-width: 812px) and (max-width: 960px) {
+  body {
+      background-color: #172A3A;
+      margin: 0
+      width: 100%
+    }
+  .navbar{
+    margin: auto;
+    background-color: #004346;
+    padding: 20px 0 20px 0;
+    width: 100%;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  #nav {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  #nav:link, #nav:visited{
+    color: white;
+    text-decoration: none;
+  }
+  #nav:hover{
+    color: #09BC8A;
+  }
+  .page{
+    position: relative;
+    margin: auto;
+    width: 100%;
+  }
+  .header {
+    margin: auto;
+    background-color: #508991;
+    height: 160px;
+    padding: 20px;
+  }
+  h1 {
+    padding: 40px;
+    color: white;
+  }
 }
