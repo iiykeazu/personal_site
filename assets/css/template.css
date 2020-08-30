@@ -51,10 +51,10 @@
     color: white;
   }
 }
-@media screen and (min-width: 812px) and (max-width: 960px) {
+@media screen and (min-width: 360px) and (max-width: 960px) {
   body {
       background-color: #172A3A;
-      margin: 0
+      margin: 0px;
       width: 100%
     }
   .navbar{
