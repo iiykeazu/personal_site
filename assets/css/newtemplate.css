@@ -1,0 +1,775 @@
+html{
+  scroll-behavior: smooth;
+}
+body{
+  margin: 0;
+  padding: 0;
+  /*#04060A*/
+  background: linear-gradient(#1A0C20, #331840);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+}
+@media (min-width: 320px) {
+  #logo{
+    display: block;
+    position: fixed;
+    height: 45px;
+    width: 45px;
+    top: 5px;
+    left: 5px;
+  }
+  #hamburger{
+    display: block;
+    position: fixed;
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    top: 5px;
+    right: 5px;
+    fill:  #FF7D61;
+    z-index: 2;
+  }
+
+  .menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75vw;
+    height: 100vh;
+    padding-top: 30vh;
+    background: linear-gradient(#1A0C20, #331840);
+    z-index: 1;
+
+    transform: translate3d(105vw, 0, 0);
+    transition: transform .3s linear;
+  }
+  .menu.show{
+    transform: translate3d(0vw, 0, 0);
+  }
+  .menu nav{
+    position: static;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .menu nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .menu nav li{
+    display: block;
+    margin: 0;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .menu nav li a{
+    color: #FF7D61;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+
+    transition: color .3s linear;
+  }
+  .menu nav a.active{
+    color: #61E3FF;
+  }
+
+  #left{
+    display: none;
+  }
+  #right{
+    display: none;
+  }
+  .page_header{
+    text-align: center;
+    color: #61E3FF;
+    font-size: 20px;
+    font-weight: 200;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  #home{
+    display: block;
+    float: none;
+    height: 100vh;
+    height: -webkit-fill-available;
+    width: 100vw;
+    padding-top: 40vh;
+    margin: 0 auto;
+  }
+  #home #sky-container{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #home h3{
+    color: #DFE8E5;
+    font-size: 25px;
+    font-weight: 500;
+    padding-left: 5vw;
+    margin: 0 auto;
+  }
+  #home h3 span{
+    color: #61E3FF;
+  }
+  #home h3 em{
+    color: #FF7D61;
+  }
+  #home #intro{
+    float: left;
+    width: 100%;
+    margin: 0;
+  }
+  @keyframes starPulse{
+    0% { transform: scale(1, 1); }
+    30% { transform: scale(1.2, 1.6); }
+    40% { transform: scale(1.5, 1.2); }
+    70% { transform: scale(0.6, 0.2); }
+    90% { transform: scale(0.9, 0.5); }
+    100% { transform: scale(1.2, 0.6); }
+  }
+  @keyframes starGlowing{
+    0% {opacity: 1;}
+    100% {opacity: 0.1;}
+  }
+  @keyframes shootingStarBurn {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+  }
+  @keyframes shootingStarOrbit{
+    0% {transform:
+      rotate(var(--shooting-orbit-angle-start, 0deg))
+      translate(100px, 0);
+    }
+    100% {
+      transform:
+        rotate(var(--shooting-orbit-angle, 180deg))
+        translate(var(--shooting-orbit-radius, 100px), 0);
+    }
+  }
+  .twinkle-little-star{
+    animation:
+      starPulse 5s infinite alternate,
+      starGlowing 1s infinite alternate;
+
+    animation-delay: var(--animation-twinkle-delay, 0)
+  }
+  .shooting-star{
+    animation:
+    shootingStarOrbit 2s linear infinite,
+    shootingStarBurn 2s linear infinite;
+  }
+
+  #about{
+    display: block;
+    height: 160vh;
+    width: 100vw;
+    padding-top: 15vh;
+  }
+  #about #description{
+    display: block;
+    width: 90vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin: 0 auto;
+    margin-bottom: 10vh;
+    opacity: 0;
+    transition: opacity 3s ease-in;
+  }
+  #about #description.fade{
+    opacity: 1;
+  }
+  #about #description p{
+    color: #DFE8E5;
+    font-size: 16px;
+  }
+  #about #description p span{
+    color: #FF7D61;
+    transition: color .7s ease-out
+  }
+  #about #description p span:hover{
+    color: #61E3FF;
+  }
+  #about #skills{
+    display: block;
+    width: 90vw;
+    height: 80vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin: 0 auto;
+  }
+  #skills svg rect {
+    fill:  #61E3FF;
+  }
+  #skills #label {
+    fill: #61E3FF;
+  }
+  #skills svg text {
+    fill: black;
+    font: 15px sans-serif;
+  }
+
+  #experience{
+    height: 100vh;
+    height: -webkit-fill-available;
+    width: 100vw;
+    padding-top: 20vh;
+  }
+  #exp_tab_container{
+    position: relative;
+    width: 100vw;
+    margin: 0 auto;
+  }
+  #exp_tab_container::after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+  #exp_tab_container .slider{
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 49px;
+    top: 0;
+    left: 0;
+    margin-bottom: 5px;
+    background-color: #61E3FF;
+    transition: width .2s linear, left .2s linear;
+  }
+  #exp_tab ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  #exp_tab ul li{
+    display: inline-block;
+    padding: 15px;
+    margin: 0;
+
+    background-color: inherit;
+    outline: none;
+    cursor: pointer;
+
+    color: #FF7D61;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 10px;
+
+    transition: background-color .3s ease-in, color .3s ease-in;
+  }
+  #exp_tab ul li.active{
+    background-color: #331840;
+    color: #61E3FF;
+  }
+  .tabcontent{
+    width: 94vw;
+    height: 60vh;
+    margin-top: 0px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+  .tabcontent header{
+  }
+  .tabcontent header h2{
+    margin: 0;
+    font-size: 18px;
+    color: #61E3FF;
+  }
+  .tabcontent header h3{
+    margin: 0;
+    font-size: 16px;
+    color: #FF7D61;
+  }
+  .tabcontent ul{
+    padding-left: 5vw;
+    list-style: none
+  }
+  .tabcontent ul li::before{
+    content: "▶";
+    color: #61E3FF;
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1.5em;
+    font-size: .9em;
+    transition: color .3s ease-out;
+    text-align: center;
+  }
+  .tabcontent ul li:hover::before{
+    color: #FF7D61;
+  }
+  .tabcontent li{
+    font-size: 12px;
+    color: #DFE8E5;
+    margin-bottom: 20px;
+  }
+  #organizations, #umiacs, #reslife{
+    display: none;
+  }
+
+  #radio{
+    width: 100vw;
+    display: block;
+  }
+
+  #contact{
+    display: block;
+    height: 100vh;
+    height: -webkit-fill-available;
+    width: 100vw;
+    padding-top: 20vh;
+  }
+  #contact input[type=text]{
+    width: 90vw;
+    height: 25px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    display: block;
+    background-color: #1A0C20;
+    color: #61E3FF;
+    border: none;
+  }
+  #contact textarea{
+    width: 90vw;
+    height: 140px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    display: block;
+    background-color: #1A0C20;
+    color: #61E3FF;
+    border: none;
+  }
+  #contact input[type=submit]{
+    display: block;
+    margin: 0 auto;
+    border: none;
+
+    background-color: #FF7D61;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    transition: background-color .6s linear;
+  }
+  #contact input[type=submit]:hover{
+    background-color: #61E3FF;
+
+  }
+  #contact_media{
+    display: block;
+    width: 180px;
+    height: 32px;
+    margin: 0 auto;
+    margin-top: 20vh;
+    padding-left: 10px;
+  }
+  #contact svg{
+    height: 30px;
+    width: 30px;
+    fill: #FF7D61;
+  }
+
+
+}
+@media (min-width: 375px) {
+  #home h3{
+    font-size: 30px;
+  }
+  #about {
+    height: 145vh;
+  }
+  #exp_tab ul li{
+    font-size: 14px;
+  }
+  .tabcontent header h2{
+    font-size: 20px;
+  }
+  .tabcontent header h3{
+    font-size: 18px;
+  }
+  .tabcontent li{
+    font-size: 14px;
+  }
+}
+@media (min-width: 375px) and (max-height: 900px){
+
+  #about{
+    height: 1000px;
+  }
+  #about #skills{
+    height: 500px;
+  }
+  #experience{
+    height: 650px;
+  }
+  #contact{
+    height: 640px;
+  }
+}
+
+@media (min-width: 400px){
+  #about{
+    height: 900px;
+  }
+  #sky-container{
+    height: 900px;
+  }
+  #about #skills{
+    height: 500px;
+  }
+  #experience{
+    height: 600px;
+  }
+  #exp_tab ul li{
+    font-size: 16px;
+  }
+  .tabcontent header h2{
+    font-size: 22px;
+  }
+  .tabcontent header h3{
+    font-size: 20px;
+  }
+  .tabcontent li{
+    font-size: 16px;
+  }
+  #contact{
+    height: 600px;
+  }
+}
+@media (min-width: 750px){
+  #logo{
+    height: 60px;
+    width: 60px;
+  }
+  #hamburger{
+    height: 60px;
+    width: 60px;
+  }
+  .page_header{
+    font-size: 30px;
+  }
+  #home{
+    min-height: 600px;
+  }
+  #sky-container{
+    min-height: 600px;
+  }
+  #home h3{
+    font-size: 40px;
+  }
+  #about{
+    height: 1000px;
+    padding-top: 150px;
+  }
+  #about #description{
+    margin-bottom: 50px;
+  }
+  #about #description p{
+    font-size: 20px;
+  }
+  #about #skills{
+    margin-top: 0px;
+    min-height: 500px;
+  }
+
+  #experience{
+    height: 600px;
+  }
+  #exp_tab_container{
+    width: 70vw;
+  }
+  #exp_tab ul li{
+    font-size: 18px;
+  }
+  .tabcontent{
+    width: 70vw;
+    margin: 0 auto;
+  }
+  .tabcontent header h2{
+    font-size: 24px;
+  }
+  .tabcontent header h3{
+    font-size: 22px;
+  }
+  .tabcontent li{
+    font-size: 18px;
+  }
+  #contact{
+    height: 825px;
+  }
+  #contact input[type=text]{
+    width: 70vw;
+    height: 40px;
+  }
+  #contact textarea{
+    width: 70vw;
+    height: 200px;
+  }
+}
+
+@media (min-width: 992px){
+  #hamburger{
+    display: none;
+  }
+  #logo{
+    z-index: 2;
+  }
+  .menu{
+    position: fixed;
+    overflow: hidden;
+    height: 60px;
+    width: 100%;
+    top: -120px;
+    padding-top: 0;
+    padding-bottom: 20px;
+    background: inherit;
+    z-index: 1;
+    transition: top 1s ease-out;
+    transform: none;
+  }
+  .menu.slide{
+    top: 0px;
+  }
+  .menu::before{
+   content: '';
+   background: inherit;
+   position: absolute;
+   left: -25;
+   right: -25;
+   top: -25;
+   bottom: -25;
+   box-shadow: inset 0 0 0 3000px rgba(26, 12, 32,0.3);
+   filter: blur(10px);
+  }
+  header{
+  }
+  header::after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  .menu nav{
+    display: block;
+    position: absolute;
+    right: 0px;
+    padding-bottom: 20px;
+  }
+  .menu nav ul{
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .menu nav li{
+    display: inline-block;
+    margin-left: px;
+    padding: 30px 35px 0 35px;
+    position: relative;
+
+  }
+  .menu nav a{
+    color: #FF7D61;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+
+    transition: color .3s linear;
+  }
+  .menu nav a:hover{
+    color: #61E3FF;
+  }
+  .menu nav a.active{
+    color: #61E3FF;
+  }
+
+  #left{
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 2s ease-out 1s;
+  }
+  #left.fade{
+    opacity: 1;
+  }
+  #left #media_container1{
+    position: absolute;
+    bottom: 30vh;
+    left: 35%;
+    width: 30px;
+  }
+  #media_container1 svg{
+    fill: #FF7D61;
+    margin-bottom: 20px;
+
+    transition: fill .5s ease-out, transform .5s ease-out;
+  }
+  #media_container1 svg:hover{
+    fill: #61E3FF;
+    transform: scale(1.2,1.2);
+  }
+  #home{
+    min-height: 600px;
+  }
+  #sky-container{
+    min-height: 600px;
+  }
+  #home h3{
+    font-size: 60px;
+    padding-left: 110px;
+  }
+
+  #about{
+    height: 1000px;
+    padding-top: 100px;
+  }
+  #about #description{
+    width: 70vw;
+  }
+  #about #description p{
+    font-size: 25px;
+  }
+  #about #skills{
+    width: 70vw;
+  }
+
+  #experience{
+    min-height: 600px;
+    padding-top: 150px;
+  }
+  #exp_tab{
+    margin: 0 auto;
+  }
+  #exp_tab_container{
+    min-width: 550px;
+    width: 60vw;
+  }
+  #exp_tab ul li{
+    font-size: 16px;
+  }
+  .tabcontent{
+    width: 60vw;
+    min-height: 400px;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .tabcontent header h2{
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .tabcontent header h3{
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .tabcontent ul{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .tabcontent li{
+    font-size: 16px;
+  }
+  #contact{
+    height: 600px;
+  }
+  #contact input[type=text]{
+    width: 50vw;
+    height: 40px;
+  }
+  #contact textarea{
+    width: 50vw;
+    height: 200px;
+  }
+  #contact_media{
+    display: none;
+  }
+}
+
+@media (min-width: 992px) and (min-height: 1000px){
+  #contact{
+    height: 1200px;
+  }
+}
+@media (min-width: 1200px){
+  #home{
+    min-height: 600px;
+  }
+  #sky-container{
+    min-height: 600px;
+  }
+  #about{
+    width: 80%;
+    height: 600px;
+    padding-top: 115px;
+    margin: 0 auto;
+  }
+  #about #description{
+    position: static;
+    float: left;
+    width: 45%;
+    padding: 0;
+    margin-left: 2.5%;
+  }
+  #about #description p{
+    font-size: 20px;
+  }
+  #about #skills{
+    float: right;
+    width: 45%;
+    margin-right: 2.5%;
+    padding: 0;
+    padding-top: 25px;
+  }
+  #experience{
+    width: 80%;
+    height: 600px;
+    padding-top: 150px;
+    margin: 0 auto;
+  }
+  #exp_tab_container{
+    min-width: 550px;
+    width: 50%;
+  }
+  #exp_tab ul li{
+    font-size: 16px;
+  }
+  .tabcontent{
+    min-width: 550px;
+    width: 50%;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .tabcontent header h2{
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .tabcontent header h3{
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .tabcontent li{
+    font-size: 16px;
+  }
+  #contact{
+    height: 600px;
+  }
+  #contact input[type=text]{
+    width: 45vw;
+  }
+  #contact textarea{
+    width: 45vw;
+  }
+}
